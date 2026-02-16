@@ -1,0 +1,72 @@
+Case Study: Employee Management System
+🗂️ Database Schema
+1. Department Table
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+2. Employee Table
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    salary DECIMAL(10, 2),
+    hire_date DATE,
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+
+Insert Data into Department
+INSERT INTO Department VALUES 
+(1, 'HR'),
+(2, 'Finance'),
+(3, 'IT'),
+(4, 'Marketing');
+🔹 Insert Data into Employee
+INSERT INTO Employee VALUES 
+(101, 'Alice', 55000, '2022-01-15', 1),
+(102, 'Bob', 67000, '2023-04-10', 2),
+(103, 'Charlie', 45000, '2021-11-01', 3),
+(104, 'David', 72000, '2024-02-25', 2),
+(105, 'Eve', 38000, '2022-09-30', 1),
+(106, 'Frank', 61000, '2023-06-10', 3);
+
+emp_name	salary	dept_name
+Alice	60000	HR
+Bob	67000	Finance
+Charlie	45000	IT
+
+Basic Level (1–10)
+1.	Write a query to insert a new employee 'George' with emp_id = 107, salary = 50000, hire_date = '2024-07-01', dept_id = 3.
+2.	Update the salary of all employees in the 'IT' department by 10%.
+3.	Delete the employee who has emp_id = 106.
+4.	Write a query to display all employee names and their department names.
+5.	Display all employees whose salary is greater than 50000.
+6.	Write a query to find the employees who work in the 'HR' or 'Finance' departments.
+7.	List all employees hired between '2022-01-01' and '2023-12-31'.
+8.	Retrieve the names and hire dates of employees from department id 3.
+9.	Get all employees whose names start with the letter 'A'.
+10.	List all departments and count the number of employees in each.
+________________________________________
+🔁 Intermediate Level (11–20)
+11.	Write a query to find the second highest salary in the Employee table.
+12.	Find the employee(s) with the highest salary.
+13.	Display all employees along with their department name using an INNER JOIN.
+14.	Find employees whose salary is between 40000 and 70000.
+15.	Display employees who are not in department 1 or 3.
+16.	List employees who were hired before 2023.
+17.	Write a query to increase salary by 2000 for employees in 'Marketing'.
+18.	Find employees who belong to departments with the name starting with 'F'.
+19.	Delete all employees who have salary less than 40000.
+20.	Show employee name and department name using an alias for both tables.
+________________________________________
+🧠 Advanced Level (21–30)
+21.	Write a query to display each department name and the average salary of its employees.
+22.	Find the department that has the highest average salary.
+23.	Write a query to list employees who have the same salary as someone else.
+24.	Display the total salary paid to each department.
+25.	Display departments that have more than 1 employee.
+26.	Write a query to find the most recently hired employee.
+27.	Show employees and their salary ranks in descending order.
+28.	Find the number of employees hired each year.
+29.	Write a query to join Employee and Department and order the result by employee name.
+30.	Display the employee name, salary, and a new column called 'Tax' as 10% of salary.
